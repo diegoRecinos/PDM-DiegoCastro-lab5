@@ -15,6 +15,11 @@ coil = "3.4.0"
 navigationCompose = "2.9.8"
 material3 = "1.4.0"
 
+room = "2.8.4"
+ksp = "2.3.9"
+
+
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -46,9 +51,16 @@ androidx-compose-material-icons-core = { group = "androidx.compose.material", na
 #viewmodel
 androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
 
+#room
+room-runtime  = { group = "androidx.room", name = "room-runtime",  version.ref = "room" }
+room-ktx      = { group = "androidx.room", name = "room-ktx",      version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
+#room
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

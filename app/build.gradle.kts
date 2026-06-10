@@ -3,6 +3,7 @@
     alias(libs.plugins.kotlin.compose)
     //nav3 routes serialization plugin
     alias(libs.plugins.kotlin.serialization)
+        alias(libs.plugins.ksp)
 }
 
 android {
@@ -75,6 +76,10 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
 
+    //room
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
 
     // ... otras dependenciasimplementation("androidx.compose.material:material-icons-core")
     implementation(libs.androidx.compose.material.icons.extended)
