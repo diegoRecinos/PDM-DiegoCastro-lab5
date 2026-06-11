@@ -1,7 +1,6 @@
-package com.pdm0126.lab5.data.repositories
+package com.pdm0126.lab5.data.repository
 
 import com.pdm0126.lab5.data.database.dao.TaskDao
-import com.pdm0126.lab5.data.database.entities.TaskEntity
 import com.pdm0126.lab5.data.database.entities.toEntity
 import com.pdm0126.lab5.data.database.entities.toModel
 import kotlinx.coroutines.flow.Flow
