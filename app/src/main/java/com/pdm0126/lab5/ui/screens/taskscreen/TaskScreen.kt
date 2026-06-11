@@ -37,6 +37,8 @@ import androidx.compose.ui.window.DialogProperties
 //import com.pdm0126.lab4.CreateTask
 import com.pdm0126.lab5.data.model.Task
 import com.pdm0126.lab5.ui.components.TaskCard
+import kotlinx.coroutines.NonCancellable.isCompleted
+import java.util.Date
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -73,9 +75,11 @@ fun TaskScreen(
                 onDismiss = { showDialog = false },
                 onTaskCreated = { newTitle, newDescription ->
                     val newTask = Task(
-                        id = tasks.value.size + 1,
+                        id = 0,
                         title = newTitle,
-                        description = newDescription
+                        description = newDescription,
+                        endDate = Date(),
+                        isCompleted = false
                     )
                     //taskList.add(newTask)
                     viewModel.addTask(newTask)
@@ -106,6 +110,7 @@ fun CreateTask(
                 Column(
                     modifier = Modifier
                         .wrapContentSize()
+                        .padding(16.dp)
                         .background(Color.Black),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
